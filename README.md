@@ -1,4 +1,4 @@
-## Basics of Frequentist Fitting
+## Basic Frequentist Fitting
 
 To complete this tutorial:
 
