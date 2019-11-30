@@ -1,6 +1,7 @@
 """
 Code for Tutorial on Parameter Estimation by Maximum Likelihood Fitting
-Modified by Kathleen Eckert from an activity written by Sheila Kannappan
+Modified by Kathleen Eckert from an activity written by Sheila Kannappan,
+then further modified by Sheila Kannappan November 2019.
 """
 
 import numpy as np
@@ -16,9 +17,11 @@ narr=50 # number of data points
 xvals = np.arange(narr) + 1. # xvals range from 1-51
 yvals = alphatrue*xvals + betatrue + npr.normal(0,errs,narr) # yvals 
 # What aspect of a real data set does npr.normal emulate here?
-# What assumption is made here in the unweighted least squares approach?
 '''
 It's emulating random measurement errors with amplitude sigma=errs.
+'''
+# What assumption is made here in the unweighted least squares approach?
+'''
 The code is assuming that these errors have the same amplitude for all 
 data points, which is key to the unweighted least squares approach.
 '''
@@ -98,7 +101,7 @@ The error estimates come from the square root of the corresponding diagonal term
 '''
 # Are the uncertainties the same as in the analytic solution?
 '''
-They agree closely but are not identical.
+Depending on your version of numpy, they may be identical or may agree closely with the numerical uncertainties being slightly larger..
 '''
 
 # Try changing N to 10 or 100 in the code above. Print out the fractional
@@ -115,5 +118,5 @@ The uncertainties get larger for N=10, smaller for N=100.
 '''
 # What happens to the percentage difference between the analytical and numerical methods for computing the uncertanties if you increase/decrease the number of points (try N=100, N=10)?
 '''
-The percentage difference between methods gets larger for N=10, smaller for N=100.
+The answer depends on your version of numpy. Some versions give the exact same answer as the analytic calculation, while others show a small discrepancy. If there is a discrepancy, the percentage difference between methods gets larger for N=10, smaller for N=100.
 '''
